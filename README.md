@@ -16,7 +16,7 @@ to your `composer.json` file:
         }
     ],
     "require": {
-        "nockieboy/TCPDF": "dev-bugfix"
+        "nockieboy/TCPDF": "dev-master"
     }
 }
 ```
