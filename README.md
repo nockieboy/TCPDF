@@ -9,8 +9,14 @@ to your `composer.json` file:
 
 ```json
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/nockieboy/TCPDF"
+        }
+    ],
     "require": {
-        "laurentbrieu/tcpdf": "dev-master"
+        "nockieboy/TCPDF": "dev-bugfix"
     }
 }
 ```
@@ -24,4 +30,4 @@ And run composer to update your dependencies:
 
 **Please provide feedback!** We want to make this library useful in as many projects as possible.
 
-Actively maintained by [Laurent Brieu](https://github.com/LaurentBrieu).
+Forked from [Laurent Brieu](https://github.com/LaurentBrieu).
