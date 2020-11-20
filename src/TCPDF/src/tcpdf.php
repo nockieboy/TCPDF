@@ -15071,7 +15071,7 @@ class TCPDF {
 		for ($i=0; $i < $cnt; ++$i) {
 			$line = $lines[$i];
 			if (($line == '') OR ($line[0] == '%')) {
-				continue;
+				continue 2;
 			}
 			$len = strlen($line);
 			// check for spot color names
@@ -15094,7 +15094,7 @@ class TCPDF {
 				$g = array_pop($chunks);
 				$r = array_pop($chunks);
 				$this->_out(''.$r.' '.$g.' '.$b.' '.($cmd=='Xa'?'rg':'RG')); //substr($line, 0, -2).'rg' -> in EPS (AI8): c m y k r g b rg!
-				continue;
+				continue 2;
 			}
 			$skip = false;
 			if ($fixoutvals) {
@@ -16551,7 +16551,7 @@ class TCPDF {
 						$thead = true;
 					}
 					++$elkey;
-					continue;
+					continue 2;
 				}
 				$dom[$key]['tag'] = true;
 				$dom[$key]['value'] = $tagname;
@@ -17804,7 +17804,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 										if ($offset === false) {
 											$this->Error('HTML Justification: malformed PDF code.');
 										}
-										continue;
+										continue 2;
 									}
 									if ($this->isRTLTextDir()) {
 										$spacew = ($spacewidth * ($nsmax - $ns));
@@ -17828,7 +17828,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 											$pmid_e = substr($pmid, $epsposend);
 											$pmid = $pmid_b."\nq\n".$trx."\n".$pmid_m."\nQ\n".$pmid_e;
 											$offset = $epsposend;
-											continue;
+											continue 2;
 										}
 									}
 									$currentxpos = 0;
@@ -17864,7 +17864,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 											// justify block
 											if (!TCPDF_STATIC::empty_string($this->lispacer)) {
 												$this->lispacer = '';
-												continue;
+												continue 2;
 											}
 											preg_match('/([0-9\.\+\-]*)[\s]([0-9\.\+\-]*)[\s]([0-9\.\+\-]*)[\s]('.$strpiece[1][0].')[\s](re)([\s]*)/x', $pmid, $xmatches);
 											if (!isset($xmatches[1])) {
